@@ -1,0 +1,24 @@
+<h2>Login Form</h2>
+<form class="login-form" #f="ngForm" (ngSubmit)="submit(f)">
+    <div class="form-group">
+        <label for="userName">User Name</label>
+        <input required ngModel name="userName" #userName="ngModel" 
+            (change)="log(userName)" id="userName" 
+            type="email" class="form-control">
+            <div class="alert alert-danger" *ngIf="userName.touched && !userName.valid">
+            User Name is required</div>
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input required ngModel name="password" #password="ngModel" 
+            type="text" id="password" class="form-control">
+        <div class="alert alert-danger" *ngIf="password.touched && !password.valid"
+        >Password is required</div>
+    </div>
+    <div class="checkbox">
+        <label for="">
+            <input type="checkbox"> Remember me?
+        </label>
+    </div>   
+    <button class="btn btn-primary" [disabled]="!f.valid">Submit</button>
+</form>
