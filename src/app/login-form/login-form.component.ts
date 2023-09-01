@@ -15,4 +15,8 @@ export class LoginFormComponent {
     f.value;
   }
 
+  onRemember(f: any){
+    
+  }
+
 }
