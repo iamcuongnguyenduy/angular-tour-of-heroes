@@ -12,6 +12,9 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
 import { LoginFormComponent } from './login-form/login-form.component';
+import { CoursesComponent } from './courses/courses.component';
+import { LoginPageComponent } from './login-page/login-page.component';
+import { SignupPageComponent } from './signup-page/signup-page.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,10 @@ import { LoginFormComponent } from './login-form/login-form.component';
     MessagesComponent,
     DashboardComponent,
     HeroSearchComponent,
-    LoginFormComponent
+    LoginFormComponent,
+    CoursesComponent,
+    LoginPageComponent,
+    SignupPageComponent
   ],
   imports: [
     BrowserModule,

@@ -19,4 +19,9 @@ export class LoginFormComponent {
     
   }
 
+  contactMethod=[
+    {id: 1, name:'Phone'},
+    {id: 2, name: 'Email'}
+  ]
+
 }

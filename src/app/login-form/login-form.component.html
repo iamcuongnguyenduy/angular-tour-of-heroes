@@ -5,12 +5,12 @@
         <input 
             required 
             ngModel name="userName" #userName="ngModel" 
-            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" 
+
             (change)="log(userName)" id="userName" 
             type="email" class="form-control">
                 <div class="alert alert-danger" *ngIf="userName.touched && !userName.valid">
                     <div *ngIf="userName?.errors?.['required']">User Name is required</div>
-                    <div *ngIf="userName?.errors?.['pattern']">Username should be email</div>
+                    <div *ngIf="userName?.errors?.['email']">Username should be email</div>                   
                 </div>
     </div>
 
@@ -32,6 +32,21 @@
             <input ngModel name="isRemember" type="checkbox"> Remember me?
         </label>
     </div>
+    <div class="form-group">
+        <label for="contactMethod"></label>
+        <select ngModel name="contactMethod" id="contactMethod" class="form-control">
+            <option value=""></option>
+            <option *ngFor="let method of contactMethod" [value]="method.id">{{method.name}}</option>
+            <!-- [ngValue]="method" binding object-->
+        </select>
+    </div>
+
+    <div *ngFor="let method of contactMethod" class="radio">
+        <label>
+            <input ngModel type="radio" name="contactMethod" [value]="method.id">{{method.name}}
+        </label>
+    </div>
+
     <p>{{f.value|json}}</p>
 
     <button class="btn btn-primary" [disabled]="!f.valid">Submit</button>

@@ -1,15 +1,22 @@
-<h1>{{title}}</h1>
+<h2>{{title}}</h2>
 <!-- <app-heroes></app-heroes> -->
 <nav>
-    <a routerLink="/login">Login</a>
-    <br>
-    <a routerLink="/dashboard">Dashboard</a>
-    <br>
-    <a routerLink="/heroes">Heroes</a>
-    <br>
-  </nav>
+    <button>
+        <a routerLink="/login">Login</a>
+    </button>
+    <button>
+        <a routerLink="/dashboard">Dashboard</a>
+    </button>
+    <button>
+        <a routerLink="/heroes">Heroes</a>
+    </button>
+    <button>
+        <a routerLink="/courses">Courses</a>
+    </button>  
+</nav>
 <router-outlet></router-outlet>
 <app-messages></app-messages>
+
 
 <!-- <p style="color: greenyellow">test style</p>
 <p [style.color]="'greenyellow'">test test</p> 
