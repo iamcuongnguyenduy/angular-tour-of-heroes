@@ -5,11 +5,10 @@
             formControlName="username"
             type="email" 
             id="username" 
-            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" 
             class="form-control">
         <div class="alert alert-danger" *ngIf="username?.touched && username?.invalid">
             <div *ngIf="username?.errors?.['required']">User Name is required</div>
-            <div *ngIf="username?.errors?.['pattern']">Username should be email</div>  
+            <div *ngIf="username?.errors?.['email']">Username should be email</div>  
             <div *ngIf="username?.errors?.['minlength']">Username is at least 10 characters</div>
         </div>
       

@@ -5,12 +5,12 @@
         <input 
             required 
             ngModel name="userName" #userName="ngModel" 
-
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" 
             (change)="log(userName)" id="userName" 
             type="email" class="form-control">
                 <div class="alert alert-danger" *ngIf="userName.touched && !userName.valid">
                     <div *ngIf="userName?.errors?.['required']">User Name is required</div>
-                    <div *ngIf="userName?.errors?.['email']">Username should be email</div>                   
+                    <div *ngIf="userName?.errors?.['pattern']">Username should be email</div>                   
                 </div>
     </div>
 
