@@ -25,4 +25,10 @@ export class LoginPageComponent {
     return this.form.get('password')
   }
 
+  login(){
+    this.form.setErrors({
+      invalidLogin: true,
+    })
+  }
+
 }
