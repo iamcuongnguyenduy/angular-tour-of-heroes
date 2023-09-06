@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { CommonValidators } from '../validators/common.validators';
 
 @Component({
   selector: 'app-login-page',
@@ -11,9 +12,10 @@ export class LoginPageComponent {
     username: new FormControl('', [
       Validators.required,
       Validators.email,
-      Validators.minLength(10)
+      Validators.minLength(10),
+      // CommonValidators.shouldBeUnique
     ]),
-    password: new FormControl('', Validators.required)
+    password: new FormControl('', [Validators.required, CommonValidators.cannotContainSpace])
   });
 
   get username(){

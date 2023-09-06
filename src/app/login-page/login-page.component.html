@@ -10,6 +10,7 @@
             <div *ngIf="username?.errors?.['required']">User Name is required</div>
             <div *ngIf="username?.errors?.['email']">Username should be email</div>  
             <div *ngIf="username?.errors?.['minlength']">Username is at least 10 characters</div>
+            <!-- <div *ngIf="username?.errors?.['shouldBeUnique']">Username is already taken</div> -->
         </div>
       
     </div>
@@ -18,11 +19,13 @@
         <label for="password">Password</label>
         <input 
             formControlName="password"
-            type="text" 
+            value="FakePSW"
+            type="password" 
             id="password" 
             class="form-control">
         <div class="alert alert-danger" *ngIf="password?.touched && password?.invalid">
             <div *ngIf="password?.errors?.['required']">Password is required</div>
+            <div *ngIf="password?.errors?.['cannotContainSpace']">Password cannot contain space character</div>
         </div>
     </div>
   
