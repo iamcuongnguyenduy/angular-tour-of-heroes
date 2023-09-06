@@ -22,7 +22,7 @@
         <label for="password">Password</label>
         <input 
             formControlName="password"
-            type="text" 
+            type="password" 
             id="password" 
             class="form-control">
         <div class="alert alert-danger" *ngIf="password?.touched && password?.invalid">
@@ -35,7 +35,7 @@
         <label for="confirmPassword">Confirm password</label>
         <input 
             formControlName="confirmPassword"
-            type="text" 
+            type="password" 
             id="password" 
             class="form-control">
         <div class="alert alert-danger" *ngIf="confirmPassword?.touched && confirmPassword?.invalid">
@@ -57,5 +57,8 @@
     </div>
   
     <button class="btn btn-primary" type="submit">Sign-up</button>
+    <span>Already has account. 
+        <a routerLink="/login">Login</a>
+</span>
 
 </form>

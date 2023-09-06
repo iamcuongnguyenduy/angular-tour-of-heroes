@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { CommonValidators } from '../validators/common.validators';
 
@@ -7,7 +7,7 @@ import { CommonValidators } from '../validators/common.validators';
     templateUrl: './signup-page.component.html',
     styleUrls: ['./signup-page.component.css']
 })
-export class SignupPageComponent {
+export class SignupPageComponent implements OnInit {
     // form = new FormGroup({
     //   username: new FormControl('', [
     //     Validators.required,
@@ -28,9 +28,10 @@ export class SignupPageComponent {
     //   ])
     // })
 
-    form;
-    constructor(fb: FormBuilder){
-      this.form = fb.group({
+    form: any;
+    constructor(private fb: FormBuilder){}
+    ngOnInit(): void {
+      this.form = this.fb.group({
         username: ['', [
             Validators.required,
             Validators.email, 
@@ -47,7 +48,7 @@ export class SignupPageComponent {
         mobileNumber: ['', Validators.required]
       })
     }
-
+      
     get username(){
       return this.form.get('username');
     }
